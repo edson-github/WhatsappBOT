@@ -79,7 +79,7 @@ def blueSelection(event=None):
         message_text = e1.get()  # message you want to send
         no_of_message = e2.get()
         if type(no_of_message) == int:
-            print("The number is integer" + str(no_of_message))
+            print(f"The number is integer{str(no_of_message)}")
         else:
             try:
                 no_of_message = int(no_of_message)
@@ -90,7 +90,7 @@ def blueSelection(event=None):
                 canvas1.create_window(250, 170, window=m1)
                 m1.after(5000, m1.destroy)
 
-        if len(message_text) == 0 or len(str(no_of_message)) == 0:
+        if len(message_text) == 0 or not str(no_of_message):
             m1 = tk.Label(master,
                           text="ERROR : Please fill the blanks.", fg="red", bg="black")
 
@@ -139,7 +139,7 @@ def blueSelection(event=None):
 
                 except Exception as e:
                     print(e)
-                    print("Invalid Phone Number:" + str(phone_no))
+                    print(f"Invalid Phone Number:{str(phone_no)}")
                     for x in range(no):
                         print(x)
                         txt_box.send_keys(text)
@@ -220,7 +220,7 @@ def orangeSelection(event=None):
 
 
             except Exception as e:
-                print("Invalid Phone Number:" + str(phone_no))
+                print(f"Invalid Phone Number:{str(phone_no)}")
 
         for mobile_no in data:
             try:
@@ -273,7 +273,7 @@ def orangeSelection(event=None):
             m1.after(5000, m1.destroy)
 
         if type(birth_month) == int and type(birth_day) == int:
-            print("The number is integer" + str(birth_day))
+            print(f"The number is integer{str(birth_day)}")
         else:
             try:
                 birth_day = int(birth_day)
@@ -380,7 +380,7 @@ def redSelection(event=None):
                     txt_box.send_keys("\n")
 
                 except Exception as e:
-                    print("Invalid Phone Number:" + str(phone_no))
+                    print(f"Invalid Phone Number:{str(phone_no)}")
 
             for mobile_no in phone_number_list:
                 try:
@@ -445,7 +445,12 @@ def greenSelection(event=None):
         hour = int(g2.get())
         minutes = int(g3.get())
 
-        if len(message_text) == 0 or len(str(phone_number)) == 0 or len(str(hour)) == 0 or len(str(minutes)) == 0:
+        if (
+            len(message_text) == 0
+            or not str(phone_number)
+            or not str(hour)
+            or not str(minutes)
+        ):
             m1 = tk.Label(master,
                           text="ERROR : Please fill the blanks.", fg="red", bg="black")
 
@@ -500,7 +505,7 @@ def greenSelection(event=None):
                     txt_box.send_keys("\n")
 
                 except Exception as e:
-                    print("Invalid Phone Number:" + str(phone_no))
+                    print(f"Invalid Phone Number:{str(phone_no)}")
 
             for mobile_no in phone_number:
                 try:
